@@ -30,5 +30,5 @@ Process of installation certification [Reference](https://certbot.eff.org/lets-e
     `$ sudo certbot certonly --apache`  
 6. Test automatic renewal  
   `$ sudo certbot renew --dry-run`  
+7. Confirm the Certbot worked   
   Access `terabytecit.com` in browser and see if the security icon in the address bar. 
-7. Confirm the Certbot worked  
