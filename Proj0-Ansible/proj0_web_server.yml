@@ -1,0 +1,29 @@
+---
+
+- hosts: web_server # Refers to the hosts.ini file for the list of ip addresses aka ec2 instances we will be accessing
+
+  tasks:
+
+    # First we install the apache web server to the ec2 instance(s) BUT we avoid starting it 
+    - name: Installing The Apache Web Server
+      apt: 
+        name: apache2 
+        state: present
+      environment: # module allows us to install apache but without starting it immediately 
+        RUNLEVEL: 1
+      become: yes # You NEED to run as root inorder to install apache2
+
+      # Replacing the default index.html file with our personalized one
+    - name: Adding Our Personalized Web Page
+      copy: 
+        src: /[PATH]/Proj0-Ansible/index.html # Replace PATH with the current location of the Proj0-Ansible folder within your terminal
+        dest: /var/www/html/index.html 
+        owner: root
+        group: root
+        mode: 0644
+      become: yes # You NEED to run this command as sudo in order to rewrite the default index.html file that the apache service provides you  
+
+      # Finally we can start the apache web service 
+    - name: Starting The Web Server
+      service: name=apache2 state=started
+      become: yes # You NEED to run this as root so that you can start the service 
