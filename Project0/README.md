@@ -1,6 +1,3 @@
-# Terabyte-CIT481-Senior-Project
-This is team Terabyte's CIT481 Senior Project Repo
-
 ## **Project 0**
 
 ### - Setup AWS Virtual Private Cloud (VPC)
