@@ -55,7 +55,7 @@ First things first, change the permissions of that .pem key file that is associa
 ``` bash
 $ chmod 400 .../NAMEOFFILE.pem
 ``` 
-<ins>NOTE: add the full path and name of your .pem file</ins>
+*NOTE: Add the full path and name of your .pem file*
 
 
 Now we can connect to ec2 instance using our bash terminal with the following command, preferably run it within the same directory where your .pem file is stored otherwise you will have to add the full path to the .pem file: 
@@ -64,7 +64,7 @@ Now we can connect to ec2 instance using our bash terminal with the following co
 $ ssh -i "NAMEOFFILE.pem" ubuntu@IP-ADDRESS-OF-INSTANCE
 ```
 
-<ins>Replace the NAMEOFFILE.pem with your actual .pem file and replace IP-ADDRESS with your ec2 instance's public IP.</ins>
+*Replace the NAMEOFFILE.pem with your actual .pem file and replace IP-ADDRESS with your ec2 instance's public IP*
 
 
 Once you are logged into your instance you will need to run install python3 as it is needed to run an ansible playbook on it: 
@@ -92,7 +92,7 @@ This folder has three files:
 
 You will need to download these files and save them within the same directory, name this new directory: Proj0-Ansible
 
-<ins>It should look this within your local machine</ins>
+*It should look this within your local machine*
 
 - `Proj0-Ansible`
 	- `proj0_web_server.yml`
@@ -131,7 +131,7 @@ Open a new bash terminal and from **with in** the `Proj0-Ansible` directory **ru
 ``` bash
 $ ansible-playbook -i hosts.ini proj0_web_server.yml -u ubuntu --key-file .../NAMEOFFILE.pem
 ```
-<ins>**NOTE**: Make sure to replace .../NAMEOFFILE.pem with the full path and name of .pem key file that corresponds with the ec2 instance which IP Address is listed within the hosts.ini</ins>
+***NOTE**: Make sure to replace .../NAMEOFFILE.pem with the full path and name of .pem key file that corresponds with the ec2 instance which IP Address is listed within the hosts.ini*
 
 ---
 
