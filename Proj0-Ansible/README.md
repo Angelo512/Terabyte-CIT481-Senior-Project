@@ -61,7 +61,7 @@ $ chmod 400 .../NAMEOFFILE.pem
 Now we can connect to ec2 instance using our bash terminal with the following command, preferably run it within the same directory where your .pem file is stored otherwise you will have to add the full path to the .pem file: 
 
 ``` bash
-ssh -i "NAMEOFFILE.pem" ubuntu@IP-ADDRESS-OF-INSTANCE
+$ ssh -i "NAMEOFFILE.pem" ubuntu@IP-ADDRESS-OF-INSTANCE
 ```
 
 <ins>Replace the NAMEOFFILE.pem with your actual .pem file and replace IP-ADDRESS with your ec2 instance's public IP.</ins>
