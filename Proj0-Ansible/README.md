@@ -36,8 +36,8 @@ If not simply run this command:
 $ apt update && apt install -y ansible
 ``` 
 On AWS: 
-1. create an ec2 ubuntu instance 
-2. choose all the free options (You do not have to) 
+1. Create an ec2 ubuntu instance 
+2. Choose all the free options (You do not have to) 
 3. Add two security groups: **ssh and http (or https)**
 4. Create a new **.pem key**
 
