@@ -36,6 +36,10 @@ This is team Terabyte's CIT481 Senior Project Repo
 - Click Next past storage and tags to Configure security group, allow SSH and HTTP, review, launch, choose key pair
 ![RAL](https://user-images.githubusercontent.com/70084203/112625506-42f3bc00-8dec-11eb-8ffd-530daae5647e.png)
 
+- AWS Service Overview
+![AWSs](https://user-images.githubusercontent.com/70084203/112683327-9f77cb00-8e2e-11eb-8437-09f52076149b.png)
+
+
 ### - Generate TLS Certificate
 - Go to [Let's Encrypt](https://letsencrypt.org/)
   To enable HTTPS on your website, you need to get a certificate (a type of file) from a Certificate Authority (CA). Let’s Encrypt is a CA. In order to get a certificate for your website’s domain from Let’s Encrypt, you have to demonstrate control over the domain.   
