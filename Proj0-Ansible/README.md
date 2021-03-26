@@ -86,9 +86,9 @@ Once it is installed now we can move foward to prepping the ansible playbook
 ### Step 2: The Ansible-PlayBook Folder 
 
 This folder has three files: 
-1. The ansible .yml file 
-2. The index.html file
-3. The hosts.ini file 
+1. The `ansible .yml` file 
+2. The `index.html` file
+3. The `hosts.ini` file 
 
 You will need to download these files and save them within the same directory, name this new directory: Proj0-Ansible
 
