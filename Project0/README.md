@@ -36,6 +36,20 @@
 - AWS Service Overview
 ![AWSs](https://user-images.githubusercontent.com/70084203/112683327-9f77cb00-8e2e-11eb-8437-09f52076149b.png)
 
+### - Route 53
+- Setup: To transfer/set up domain rights to Route 53 from another service, the authorization code is required. To do so in NameCheap, unlock the domain and enter credentials to retrieve. Seen below:
+<img width="1280" alt="Retrieve Auth Code" src="https://user-images.githubusercontent.com/69836210/112715626-9cb4be80-8e9e-11eb-982b-c0ef1e11e4cd.png">
+- Attempt 1: Setting up our domain through AWS Route 53 came with some issues as we had already previously purchased our domain through NameCheap. 
+- Our initial attempt to set up Route53 was unsuccessful as we received an error message saying the following in the the photo below:
+<img width="1280" alt="icann" src="https://user-images.githubusercontent.com/69836210/112685619-15316600-8e32-11eb-86e0-bab097fe635a.png">
+- Attempt 2: Alternative method through NameCheap. 
+<img width="1280" alt="FreeDNS" src="https://user-images.githubusercontent.com/69836210/112715713-32504e00-8e9f-11eb-97e3-84fa025513d8.png">
+- Attempt 3: [Successful] Host Record Setup Through NameCheap
+    1. Manage Domain Settings
+    2. Advanced DNS 
+    3. Select "Add New Record"
+    4. Add configuration to point to setup Apex domain and HTTPs
+<img width="988" alt="Records" src="https://user-images.githubusercontent.com/69836210/112715994-02a24580-8ea1-11eb-8fda-c8415497762f.png">
 
 ### - Generate TLS Certificate
 - Go to [Let's Encrypt](https://letsencrypt.org/)
