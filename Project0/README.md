@@ -30,8 +30,8 @@
 ![US18](https://user-images.githubusercontent.com/70084203/112625169-c9f46480-8deb-11eb-9472-efe7c291e662.png)
 - Configure Instance details, select non default VPC for network, choose a public subnet, Auto assign IP enabled
 ![CID](https://user-images.githubusercontent.com/70084203/112625350-045e0180-8dec-11eb-973d-68aae84a62ba.png)
-- Click Next past storage and tags to Configure security group, allow SSH and HTTP, review, launch, choose key pair
-![RAL](https://user-images.githubusercontent.com/70084203/112625506-42f3bc00-8dec-11eb-8ffd-530daae5647e.png)
+- Click Next past storage and tags to Configure security group, allow SSH and HTTP, HTTPS, review, launch, choose key pair
+![RAL](https://user-images.githubusercontent.com/70084203/112726436-b8d65100-8eda-11eb-806f-efd5451bb5fe.png)
 
 - AWS Service Overview
 ![AWSs](https://user-images.githubusercontent.com/70084203/112683327-9f77cb00-8e2e-11eb-8437-09f52076149b.png)
@@ -54,7 +54,7 @@
 ### - Generate TLS Certificate
 - Go to [Let's Encrypt](https://letsencrypt.org/)
   To enable HTTPS on your website, you need to get a certificate (a type of file) from a Certificate Authority (CA). Let’s Encrypt is a CA. In order to get a certificate for your website’s domain from Let’s Encrypt, you have to demonstrate control over the domain.   
-- Use [ACEM protocol](https://tools.ietf.org/html/rfc8555)
+- Use [ACME protocol](https://tools.ietf.org/html/rfc8555)
 - There are two ways to setup
   - With `Shell` - we choose this way
     - Use [Certbot](https://certbot.eff.org/) ACME client.
