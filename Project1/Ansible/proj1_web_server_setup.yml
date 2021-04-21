@@ -15,9 +15,7 @@
         state: present
       environment: # module allows us to install apache but without starting it immediately 
         RUNLEVEL: 1
-      become: yes # You NEED to run as root inorder to install apache2
 
       # Next we install git 
     - name: Installing git 
       apt: name=git state=present
-      become: yes # Become root to install git 
