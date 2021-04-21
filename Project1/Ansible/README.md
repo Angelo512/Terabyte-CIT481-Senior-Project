@@ -174,6 +174,14 @@ Replace NAMEOFKEYFILE.pem with the name of the .pem key file that is tied to you
 
 Now access the website that is being served by your private servers! 
 
+## **_Resources_**
+
+[Ansible Dynamic Inventory](https://medium.com/awsblogs/ansible-dynamic-inventory-d7c1c57f0a93)
+
+[Ansible Documentation](https://docs.ansible.com/ansible/latest/index.html)
+
+[Lambda Functions](https://www.howtoforge.com/aws-lambda-function-to-start-and-stop-ec2-instance/)
+
 ---
 
 ## **Lambda Functions**
