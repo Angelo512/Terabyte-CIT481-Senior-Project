@@ -1,0 +1,19 @@
+---
+
+- hosts: web_server # Refers to the hosts.ini file for the list of ip addresses aka ec2 instances we will be accessing
+
+  tasks:
+
+    # First we install the apache web server to the ec2 instance(s) BUT we avoid starting it 
+    - name: Installing The Apache Web Server
+      apt: 
+        name: apache2 
+        state: present
+      environment: # module allows us to install apache but without starting it immediately 
+        RUNLEVEL: 1
+      become: yes # You NEED to run as root inorder to install apache2
+
+      # Next we install git 
+    - name: Installing git 
+      apt: name=git state=present
+      become: yes # Become root to install git 
