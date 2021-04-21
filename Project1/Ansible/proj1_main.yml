@@ -3,5 +3,5 @@
 - name: Web Server Setup and Configuration
   import_playbook: proj1_web_server_setup.yml
 
-- name: Calendar Service Deployment
+- name: Website Deployment
   import_playbook: proj1_service_deployment.yml
