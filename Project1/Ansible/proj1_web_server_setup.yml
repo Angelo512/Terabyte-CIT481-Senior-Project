@@ -1,6 +1,10 @@
 ---
 
-- hosts: web_server # Refers to the hosts.ini file for the list of ip addresses aka ec2 instances we will be accessing
+- name: Web Server Configuration
+  hosts: all
+  user: ubuntu
+  become: yes
+  gather_facts: True
 
   tasks:
 

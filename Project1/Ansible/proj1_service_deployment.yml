@@ -1,23 +1,23 @@
 ---
 
-- hosts: web_server
+- name: Service Deployment
+  hosts: all
+  user: ubuntu
+  become: yes
+  gather_facts: True
 
   tasks:  
-
 
       # Next we git clone the Terabyte Repo to access the necessary files 
     - name: Git Clone Terabyte Repo 
       git: 
         repo: https://github.com/Angelo512/Terabyte-CIT481-Senior-Project.git
         dest: /var/www/html/TerabyteCIT481
-      become: yes # Become root to git clone the repo 
 
     # Replacing the default index.html file with our personalized one
     - name: Switching out the default index.html with our groups personalized index.html
       command: mv /var/www/html/TerabyteCIT481/Project1/Ansible/index.html /var/www/html/index.html
-      become: yes # You NEED to run this command as sudo in order to rewrite the default index.html file that the apache service provides you  
 
       # Finally we can start the apache web service 
     - name: Starting The Web Server
       service: name=apache2 state=started
-      become: yes # You NEED to run this as root so that you can start the service 
