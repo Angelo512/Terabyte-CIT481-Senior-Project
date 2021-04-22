@@ -23,13 +23,13 @@
     ## ADDING MORE FILES TO /VAR/WWW/HTML
 
     # Replacing the default index.html file with our personalized one
-    #- name: Switching out the default index.html with our groups personalized index.html
-     # command: mv /var/www/html/TerabyteCIT481/Project1/path/to/file /var/www/html/nameoffile
+    - name: Switching out the default index.html with our groups personalized index.html
+      command: mv /var/www/html/TerabyteCIT481/Project1/Ansible/SimpleCalendar.html /var/www/html/SimpleCalendar.html
 
 
     # Replacing the default index.html file with our personalized one
-    #- name: Switching out the default index.html with our groups personalized index.html
-     # command: mv /var/www/html/TerabyteCIT481/Project1/path/to/file /var/www/html/nameoffile
+    - name: Switching out the default index.html with our groups personalized index.html
+      command: mv /var/www/html/TerabyteCIT481/Project1/Ansible/SimpleCalendar.css /var/www/html/SimpleCalendar.css
 
 
     # Replacing the default index.html file with our personalized one
