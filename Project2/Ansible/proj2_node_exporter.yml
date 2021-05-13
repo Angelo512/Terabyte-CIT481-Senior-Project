@@ -1,0 +1,69 @@
+--- 
+
+- name: Web Server Configuration
+  hosts: all
+  user: ubuntu
+  become: yes
+  gather_facts: True
+
+  tasks: 
+
+    # First we need to install node_exporter from the following web site
+    - name: Download Node Exporter
+      get_url:
+        url: https://github.com/prometheus/node_exporter/releases/download/v0.15.2/node_exporter-0.15.2.linux-amd64.tar.gz
+        dest: /
+
+    # Next, we need to unzip the package 
+    - name: Unzipping Node Exprter 
+      command: tar -xf node_exporter-0.15.2.linux-amd64.tar.gz
+
+    # Next, we need to move the node_exporter binary to /usr/local/bin
+    - name: Moving The Node Exporter Binary to /usr/local/bin
+      command: mv node_exporter-0.15.2.linux-amd64/node_exporter /usr/local/bin
+
+    # Next, we have to delete some risidual files
+    - name: Deleting Some Residual Files 
+      shell: rm -rf node_exporter-0.15.2.linux-amd64*
+
+    # Next, we need to create a user for the Node Exporter binary 
+    - name: Adding a new user for Node Exporter
+      user: 
+        name: node_exporter
+        shell: /bin/false
+        system: yes
+
+    # Next, we are creating the systemd unit file for the Node Exporter binary 
+    - name: Creating A Systemd Unit File For Node Exporter
+      copy: 
+        dest: /etc/systemd/system/node_exporter.service
+        content: |
+          [Unit]
+          Description=Node Exporter
+          After=network.targe
+
+          [Service]
+          User=node_exporter
+          Group=node_exporter
+          Type=simple
+          ExecStart=/usr/local/bin/node_exporter
+
+          [Install]
+          WantedBy=multi-user.target
+
+    # Next, we need to reload the system daemon
+    - name: Reloading The System Daemon
+      systemd:
+        daemon_reload: yes
+
+    # Next, we need to enable the node exporter service to run at boot
+    - name: Enabling Node Exporter At Boot
+      systemd:
+        name: node_exporter 
+        enabled: yes
+
+    # Finally, we start the node exporter service 
+    - name: Starting Node Exporter
+      systemd:
+        name: node_exporter
+        state: started 
