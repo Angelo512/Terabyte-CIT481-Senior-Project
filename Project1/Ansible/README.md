@@ -3,6 +3,8 @@
 Inside this folder: 
 - `aws_ec2.yml`
 - `index.html`
+- `SimpleCalendar.html`
+- `SimpleCalendar.css`
 - `proj1_main.yml`
 - `proj1_service_deployment.yml`
 - `proj1_web_server_setup.yml`
@@ -10,6 +12,10 @@ Inside this folder:
 **aws_ec2.yml**: This .yml file is dynamic hosts file that will list certain ec2 instances depending on the filters we define
 
 **index.html**: This .html file is our personalized html page that we will serve on our private web servers
+
+**SimpleCalendar.html**: This .html file is our static simple calendar. 
+
+**SimpleCalendar.css**: This is the accompaning css for the SimpleCalendar.html file.
 
 **proj1_main.yml**: Main .yml ansible file that imports the two following .yml ansible files
 
