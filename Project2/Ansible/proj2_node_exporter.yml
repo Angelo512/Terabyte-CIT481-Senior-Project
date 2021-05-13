@@ -19,6 +19,7 @@
       unarchive: 
         src: /node_exporter-0.15.2.linux-amd64.tar.gz
         dest: /
+        remote_src: yes
 
     # Next, we need to move the node_exporter binary to /usr/local/bin
     - name: Moving The Node Exporter Binary to /usr/local/bin
