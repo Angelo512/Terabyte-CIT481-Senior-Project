@@ -1,6 +1,6 @@
 --- 
 
-- name: Node Exporter Installation
+- name: Prometheus Installation
   hosts: all
   user: ubuntu
   become: yes
