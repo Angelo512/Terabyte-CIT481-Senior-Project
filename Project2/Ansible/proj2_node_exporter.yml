@@ -15,9 +15,10 @@
         dest: /
 
     # Next, we need to unzip the package 
-    - name: Unzipping Node Exprter 
-      shell: tar -xf /node_exporter-0.15.2.linux-amd64.tar.gz
-      warn: false
+    - name: Unzipping Node Exporter 
+      unarchive: 
+        src: /node_exporter-0.15.2.linux-amd64.tar.gz
+        dest: /
 
     # Next, we need to move the node_exporter binary to /usr/local/bin
     - name: Moving The Node Exporter Binary to /usr/local/bin
