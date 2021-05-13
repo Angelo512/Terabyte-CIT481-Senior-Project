@@ -16,15 +16,15 @@
 
     # Next, we need to unzip the package 
     - name: Unzipping Node Exprter 
-      command: tar -xf node_exporter-0.15.2.linux-amd64.tar.gz
+      command: tar -xf /node_exporter-0.15.2.linux-amd64.tar.gz
 
     # Next, we need to move the node_exporter binary to /usr/local/bin
     - name: Moving The Node Exporter Binary to /usr/local/bin
-      command: mv node_exporter-0.15.2.linux-amd64/node_exporter /usr/local/bin
+      command: mv /node_exporter-0.15.2.linux-amd64/node_exporter /usr/local/bin
 
     # Next, we have to delete some risidual files
     - name: Deleting Some Residual Files 
-      shell: rm -rf node_exporter-0.15.2.linux-amd64*
+      shell: rm -rf /node_exporter-0.15.2.linux-amd64*
 
     # Next, we need to create a user for the Node Exporter binary 
     - name: Adding a new user for Node Exporter
