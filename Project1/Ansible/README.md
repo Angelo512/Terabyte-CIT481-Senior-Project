@@ -186,6 +186,4 @@ Now access the website that is being served by your private servers!
 
 [Ansible Documentation](https://docs.ansible.com/ansible/latest/index.html)
 
-[Lambda Functions](https://www.howtoforge.com/aws-lambda-function-to-start-and-stop-ec2-instance/)
-
 ---
