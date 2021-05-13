@@ -1,0 +1,4 @@
+---
+
+- name: Node Exporter Installation
+  import_playbook: proj2_node_exporter.yml
