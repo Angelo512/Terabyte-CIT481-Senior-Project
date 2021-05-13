@@ -1,6 +1,6 @@
 --- 
 
-- name: Web Server Configuration
+- name: Node Exporter Installation
   hosts: all
   user: ubuntu
   become: yes

@@ -1,0 +1,7 @@
+---
+
+- name: Node Exporter Installation
+  import_playbook: proj2_node_exporter.yml
+
+- name: Prometheus Installation (Bastion Host Only)
+  import_playbook: proj2_prometheus.yml
