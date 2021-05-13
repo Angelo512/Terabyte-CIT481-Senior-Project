@@ -39,7 +39,7 @@
 
     # Next, we need to move config files to directory we just made 
     - name: Moving The Prometheus Config Files To /etc/prometheus
-      command: mv prometheus-2.1.0.linux-amd64/consoles prometheus-2.1.0.linux-amd64/console_libraries /etc/prometheus
+      command: mv /prometheus-2.1.0.linux-amd64/consoles prometheus-2.1.0.linux-amd64/console_libraries /etc/prometheus
 
     # Next, we have to delete some risidual files
     - name: Deleting Some Residual Files 
