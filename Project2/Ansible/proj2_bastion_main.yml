@@ -5,3 +5,6 @@
 
 - name: Prometheus Installation (Bastion Host Only)
   import_playbook: proj2_prometheus.yml
+
+- name: Grafana Installation (Bastion Host Only)
+  import_playbook: proj2_grafana.yml

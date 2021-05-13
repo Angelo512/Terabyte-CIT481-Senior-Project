@@ -1,0 +1,155 @@
+--- 
+
+- name: Node Exporter Installation
+  hosts: all
+  user: ubuntu
+  become: yes
+  gather_facts: True
+
+  tasks: 
+
+    # First, we need to install prometheus from the following web site
+    - name: Download Node Exporter
+      get_url:
+        url: https://github.com/prometheus/prometheus/releases/download/v2.1.0/prometheus-2.1.0.linux-amd64.tar.gz
+        dest: /
+
+    # Next, we need to unzip the promethus package
+    - name: Unzipping Prometheus
+      unarchive: 
+        src: /prometheus-2.1.0.linux-amd64.tar.gz
+        dest: /
+        remote_src: yes
+
+    # Next, we need to move the prometheus binaries to usr/local/bin
+    - name: Moving The Prometheus Binaries To /usr/local/bin
+      command: mv /prometheus-2.1.0.linux-amd64/prometheus /prometheus-2.1.0.linux-amd64/promtool /usr/local/bin
+
+    # Next, we need to create a directory for prometheus to use for config files
+    - name: Creating Prometheus Folder For Config Files
+      file: 
+        path: /etc/prometheus
+        state: directory
+
+    # Next, we need to create a directory for prometheus to use for data 
+    - name: Creating Prometheus Folder For Storing Data
+      file:
+        path: /var/lib/prometheus
+        state: directory 
+
+    # Next, we need to move config files to directory we just made 
+    - name: Moving The Prometheus Config Files To /etc/prometheus
+      command: mv prometheus-2.1.0.linux-amd64/consoles prometheus-2.1.0.linux-amd64/console_libraries /etc/prometheus
+
+    # Next, we have to delete some risidual files
+    - name: Deleting Some Residual Files 
+      shell: rm -r prometheus-2.1.0.linux-amd64*
+
+
+    #### NOTE: THE FOLLOWING TASK NEEDS TO EDITED TO INCLUDE SERVER IP ADDRESSES ON LINE 58
+
+    # Next, we need to configure prometheus by adding our servers to monitor
+    - name: Adding Our Servers To Monitor To /etc/hosts File
+      blockinfile:
+        path: /etc/hosts
+        marker: "# Anisble-Managed Server Monitor List"
+        insertafter: "localhost"
+        block: |
+          52.12.174.77 prometheus-target-1
+          54.186.246.198 prometheus-target-2
+          34.215.115.248 prometheus-target-3
+
+    ### END OF EDITED TASK 
+
+    # Next, we are creating the config file for prometheus 
+    - name: Creating /etc/prometheus/prometheus.yml Configuration File
+      copy: 
+        dest: /etc/prometheus/prometheus.yml
+        content: |
+          global:
+            scrape_interval: 10s
+
+          scrape_configs:
+            - job_name: 'prometheus_metrics'
+              scrape_interval: 5s
+              static_configs:
+                - targets: ['localhost:9090']
+            - job_name: 'node_exporter_metrics'
+              scrape_interval: 5s
+              static_configs:
+                - targets: ['localhost:9100','prometheus-target-1:9100','prometheus-target-2:9100']
+
+    # Next, we need to add a new user 
+    - name: Adding a new user for Prometheus
+      user: 
+        name: prometheus
+        shell: /bin/false
+        system: yes
+
+    # Next, we need to change the ownership of prometheus config files to the new user we just created 
+    - name: Changing The Ownership Of Prometheus Config Files - Part 1
+      file:
+        path: /etc/prometheus
+        state: directory
+        recurse: yes
+        owner: prometheus
+        group: prometheus
+
+    # Next, we need to change the ownership of prometheus config files to the new user we just created 
+    - name: Changing The Ownership Of Prometheus Config Files - Part 2
+      file:
+        path: /var/lib/prometheus
+        state: directory
+        recurse: yes
+        owner: prometheus
+        group: prometheus
+
+    # Next, we are creating the systemd unit file for prometheus  
+    - name: Creating A Systemd Unit File For Prometheus
+      copy: 
+        dest: /etc/systemd/system/prometheus.service
+        content: |
+          [Unit]
+          Description=Prometheus
+          After=network.target
+
+          [Service]
+          User=prometheus
+          Group=prometheus
+          Type=simple
+          ExecStart=/usr/local/bin/prometheus \
+              --config.file /etc/prometheus/prometheus.yml \
+              --storage.tsdb.path /var/lib/prometheus/ \
+              --web.console.templates=/etc/prometheus/consoles \
+              --web.console.libraries=/etc/prometheus/console_libraries
+
+          [Install]
+          WantedBy=multi-user.target
+
+    # Next, we need to reload the system daemon
+    - name: Reloading The System Daemon
+      systemd:
+        daemon_reload: yes
+
+    # Next, we need to enable the prometheus service to run at boot
+    - name: Enabling Prometheus At Boot
+      systemd:
+        name: prometheus 
+        enabled: yes
+
+    # Finally, we start the prometheus service 
+    - name: Starting Prometheus
+      systemd:
+        name: prometheus
+        state: started
+
+
+
+
+
+
+
+
+
+
+
