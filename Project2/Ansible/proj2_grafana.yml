@@ -15,7 +15,7 @@
         dest: /
 
     # Next, we need to install the following packages
-    - name: Installing adduser and libfontconfig
+    - name: Installing adduser and libfontconfig1
       apt: 
         name: 
           - adduser 

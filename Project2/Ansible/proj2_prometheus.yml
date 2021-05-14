@@ -59,10 +59,11 @@
         marker: "# Anisble-Managed Server Monitor List"
         insertafter: "localhost"
         block: |
-          52.12.174.77 prometheus-target-1
-          54.186.246.198 prometheus-target-2
-          34.215.115.248 prometheus-target-3
-     #    XX.XXX.XXX.XXX prometheus-target-x
+#          XX.XXX.XXX.XXX prometheus-target-x
+#          XX.XXX.XXX.XXX prometheus-target-x
+#          XX.XXX.XXX.XXX prometheus-target-x
+
+
 
 
     # Next, we are creating the config file for prometheus 
@@ -81,8 +82,7 @@
             - job_name: 'node_exporter_metrics'
               scrape_interval: 5s
               static_configs:
-                - targets: ['localhost:9100','prometheus-target-1:9100','prometheus-target-2:9100', 'prometheus-target-3:9100']
-    #           - targets: ['localhost:9100, 'prometheus-target-1:9100, 'prometheus-target-x:9100', ....]   
+    #            - targets: ['localhost:9100, 'prometheus-target-1:9100, 'prometheus-target-x:9100', ....]   
     #             This should be same amount of targets as in the above task DO NOT TOUCH LOCALHOST ONLY THE TARGETS YOU SHOULD CHANGE!
 
     ## END OF EDITED TASKS
