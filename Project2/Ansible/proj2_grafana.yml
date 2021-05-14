@@ -24,7 +24,7 @@
 
     # Next, we need to install grafana package 
     - name: Installing The Grafana Package
-      shell: dpkg -i grafana_5.0.4_amd64.deb
+      shell: dpkg -i /grafana_5.0.4_amd64.deb
 
     # Next, we need to reload the service daemon
     - name: Reloading The System Daemon
@@ -45,4 +45,3 @@
 
 
 
-        
