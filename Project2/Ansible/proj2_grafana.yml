@@ -1,0 +1,48 @@
+--- 
+
+- name: Grafana Installation
+  hosts: all
+  user: ubuntu
+  become: yes
+  gather_facts: True
+
+  tasks:
+
+    # First, we need to install grafana from the following website
+    - name: Downloading The Grafana Package 
+      get_url:
+        url: https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_5.0.4_amd64.deb
+        dest: /
+
+    # Next, we need to install the following packages
+    - name: Installing adduser and libfontconfig
+      apt: 
+        name: 
+          - adduser 
+          - libfontconfig
+        state: present 
+
+    # Next, we need to install grafana package 
+    - name: Installing The Grafana Package
+      shell: dpkg -i grafana_5.0.4_amd64.deb
+
+    # Next, we need to reload the service daemon
+    - name: Reloading The System Daemon
+      systemd:
+        daemon_reload: yes
+
+    # Next, we need to enable the grafana service to run at boot
+    - name: Enabling Grafana At Boot
+      systemd:
+        name: grafana-server 
+        enabled: yes 
+
+    # Finally, we start the prometheus service 
+    - name: Starting Grafana
+      systemd:
+        name: grafana-server.service
+        state: started
+
+
+
+        

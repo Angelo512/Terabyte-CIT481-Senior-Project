@@ -9,13 +9,13 @@
   tasks: 
 
     # First, we need to install prometheus from the following web site
-    - name: Download Node Exporter
+    - name: Downloading The Prometheus Package
       get_url:
         url: https://github.com/prometheus/prometheus/releases/download/v2.1.0/prometheus-2.1.0.linux-amd64.tar.gz
         dest: /
 
-    # Next, we need to unzip the promethus package
-    - name: Unzipping Prometheus
+    # Next, we need to unzip the prometheus package
+    - name: Unzipping The Prometheus package
       unarchive: 
         src: /prometheus-2.1.0.linux-amd64.tar.gz
         dest: /
@@ -50,7 +50,7 @@
       shell: rm -rf /prometheus-2.1.0.linux-amd64*
 
 
-    #### NOTE: THE FOLLOWING TASK NEEDS TO EDITED TO INCLUDE SERVER IP ADDRESSES ON LINE 58
+    #### NOTE: THE FOLLOWING TASKS NEED TO EDITED TO INCLUDE SERVER PUBLIC IP ADDRESSES AFTER THE BLOCK ADD AS MUCH NODE SERVERS AS YOU WANT 
 
     # Next, we need to configure prometheus by adding our servers to monitor
     - name: Adding Our Servers To Monitor To /etc/hosts File
@@ -62,8 +62,8 @@
           52.12.174.77 prometheus-target-1
           54.186.246.198 prometheus-target-2
           34.215.115.248 prometheus-target-3
+     #    XX.XXX.XXX.XXX prometheus-target-x
 
-    ### END OF EDITED TASK 
 
     # Next, we are creating the config file for prometheus 
     - name: Creating /etc/prometheus/prometheus.yml Configuration File
@@ -77,11 +77,15 @@
             - job_name: 'prometheus_metrics'
               scrape_interval: 5s
               static_configs:
-                - targets: ['54.244.203.159:9090']
+                - targets: ['localhost:9090']
             - job_name: 'node_exporter_metrics'
               scrape_interval: 5s
               static_configs:
-                - targets: ['54.244.203.159:9100','prometheus-target-1:9100','prometheus-target-2:9100']
+                - targets: ['localhost:9100','prometheus-target-1:9100','prometheus-target-2:9100', 'prometheus-target-3:9100']
+    #           - targets: ['localhost:9100, 'prometheus-target-1:9100, 'prometheus-target-x:9100', ....]   
+    #             This should be same amount of targets as in the above task DO NOT TOUCH LOCALHOST ONLY THE TARGETS YOU SHOULD CHANGE!
+
+    ## END OF EDITED TASKS
 
     # Next, we need to add a new user 
     - name: Adding a new user for Prometheus
