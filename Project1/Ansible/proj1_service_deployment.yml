@@ -8,30 +8,16 @@
 
   tasks:  
 
-      # Next we git clone the Terabyte Repo to access the necessary files 
+    # Next we git clone the Terabyte Repo to access the necessary files 
     - name: Git Clone Terabyte Repo 
       git: 
         repo: https://github.com/Angelo512/Terabyte-CIT481-Senior-Project.git
-        dest: /TerabyteCIT481
+        dest: /var/www/html/TerabyteCIT481
         force: yes
 
-    # Removing the default index.html file 
-    - name: Removing The Default Index.html File
-      file: 
-        path: /var/www/html/index.html
-        state: absent
-
     # Replacing the default index.html file with our personalized one
-    - name: Moving Index.html File From Ansible Folder To /var/www/html
-      command: cp -R /TerabyteCIT481/Project1/Ansible/index.html /var/www/html
-
-    # Replacing the default index.html file with our personalized one
-    - name: Moving 404.html File From Ansible Folder To /var/www/html
-      command: cp -R /TerabyteCIT481/Project1/Ansible/404.html /var/www/html
-
-    # Replacing the default index.html file with our personalized one
-    - name: Moving Ansible Folder To /var/www/html
-      command: cp -R /TerabyteCIT481/Project1/Ansible/ /var/www/html
+    - name: Switching out the default index.html with our groups personalized index.html
+      command: mv /var/www/html/TerabyteCIT481/Project1/Ansible/index.html /var/www/html/index.html
 
 
 
