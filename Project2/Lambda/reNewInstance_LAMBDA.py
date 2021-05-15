@@ -13,7 +13,7 @@ time.sleep(30)
 import boto3
 client = boto3.client('elbv2')
 response = client.register_targets(
-    TargetGroupArn='arn:aws:elasticloadbalancing:us-west-2:045970842620:targetgroup/testing/df625de58481ccc0',
+    TargetGroupArn='arn:aws:elasticloadbalancing:us-west-2:246397274220:targetgroup/testing/0fd957087164a9664',
     Targets=[
         {
             'Id': 'i-0d641d11c7ac618da',
