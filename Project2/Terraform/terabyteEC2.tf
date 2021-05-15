@@ -5,7 +5,7 @@ resource "aws_spot_instance_request" "spot1" {
   spot_type              = "one-time"
   wait_for_fulfillment   = "true"
   key_name               = "cit481_terabyte0"
-  vpc_security_group_ids = [aws_security_group.allow_http_ssh.id]
+  vpc_security_group_ids = [aws_security_group.priv_allow_http_ssh.id]
   subnet_id              = aws_subnet.private-subnet1.id
 
   tags = {
@@ -20,7 +20,7 @@ resource "aws_spot_instance_request" "spot2" {
   spot_type              = "one-time"
   wait_for_fulfillment   = "true"
   key_name               = "cit481_terabyte0"
-  vpc_security_group_ids = [aws_security_group.allow_http_ssh.id]
+  vpc_security_group_ids = [aws_security_group.priv_allow_http_ssh.id] 
   subnet_id              = aws_subnet.private-subnet2.id
 
   tags = {
@@ -35,7 +35,7 @@ resource "aws_spot_instance_request" "spot3" {
   spot_type              = "one-time"
   wait_for_fulfillment   = "true"
   key_name               = "cit481_terabyte0"
-  vpc_security_group_ids = [aws_security_group.allow_http_ssh.id]
+  vpc_security_group_ids = [aws_security_group.priv_allow_http_ssh.id]
   subnet_id              = aws_subnet.private-subnet3.id
 
   tags = {
