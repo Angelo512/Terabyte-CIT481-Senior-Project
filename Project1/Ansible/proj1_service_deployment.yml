@@ -25,6 +25,9 @@
     - name: Switching out the default index.html with our groups personalized index.html
       command: mv /TerabyteCIT481/Project1/Ansible/index.html /var/www/html/
 
+    - name: Switching out the default index.html with our groups personalized index.html
+      command: mv /TerabyteCIT481/Project1/Ansible/ /var/www/html/
+
 
     ## ADDING MORE FILES TO /VAR/WWW/HTML
 
