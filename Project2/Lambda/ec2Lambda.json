@@ -1,0 +1,38 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "TheseActionsDontSupportResourceLevelPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "elasticloadbalancing:Describe*",
+            "Resource": "*"
+        },
+        {
+            "Sid": "Stmt1604379636573",
+            "Action": [
+                "elasticloadbalancing:DeregisterTargets",
+                "elasticloadbalancing:RegisterTargets"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:elasticloadbalancing:us-west-2:045970842620:targetgroup/testing/df625de58481ccc0"
+        },
+        {
+            "Sid": "TheseActionsSupportResourceLevelPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StopInstances",
+                "ec2:StartInstances"
+            ],
+            "Resource": [
+                "arn:aws:elasticloadbalancing:us-west-2:045970842620:targetgroup/testing/df625de58481ccc0"
+            ]
+        }
+    ]
+}
