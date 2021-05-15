@@ -8,7 +8,7 @@ response = client.start_instances(
 )
 
 import time
-time.sleep(30)
+time.sleep(120)
 
 import boto3
 client = boto3.client('elbv2')
