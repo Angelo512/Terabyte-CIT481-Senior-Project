@@ -43,7 +43,7 @@
         content: |
           [Unit]
           Description=Node Exporter
-          After=network.targe
+          After=network.target
 
           [Service]
           User=node_exporter
