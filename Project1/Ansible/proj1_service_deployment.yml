@@ -22,11 +22,50 @@
         state: absent
 
     # Replacing the default index.html file with our personalized one
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 1
+      command: mv /TerabyteCIT481/Project1/Ansible/404.html /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 2
+      command: mv /TerabyteCIT481/Project1/Ansible/apple-touch-icon-144-precomposed.png /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 3
+      command: mv /TerabyteCIT481/Project1/Ansible/favicon.png /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 4
+      command: mv /TerabyteCIT481/Project1/Ansible/icon.svg /var/www/html/
+
     - name: Switching out the default index.html with our groups personalized index.html
       command: mv /TerabyteCIT481/Project1/Ansible/index.html /var/www/html/
 
-    - name: Switching out the default index.html with our groups personalized index.html
-      command: mv /TerabyteCIT481/Project1/Ansible/ /var/www/html/
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 5
+      command: mv /TerabyteCIT481/Project1/Ansible/index.xml /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 6
+      command: mv /TerabyteCIT481/Project1/Ansible/sitemap.xml /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 7
+      command: mv /TerabyteCIT481/Project1/Ansible/categories /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 8
+      command: mv /TerabyteCIT481/Project1/Ansible/css /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 9
+      command: mv /TerabyteCIT481/Project1/Ansible/images /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 10
+      command: mv /TerabyteCIT481/Project1/Ansible/js /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 11
+      command: mv /TerabyteCIT481/Project1/Ansible/page /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 12 
+      command: mv /TerabyteCIT481/Project1/Ansible/post /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 13
+      command: mv /TerabyteCIT481/Project1/Ansible/series /var/www/html/
+
+    - name: Moving Blog Files From Ansible Folder To /var/www/html - Part 14
+      command: mv /TerabyteCIT481/Project1/Ansible/tags /var/www/html/
 
 
     ## ADDING MORE FILES TO /VAR/WWW/HTML
