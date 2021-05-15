@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on TeraByte</title>
+    <link>https://angelo512.github.io/Terabyte-CIT481-Senior-Project/post/</link>
+    <description>Recent content in Posts on TeraByte</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 12 May 2021 20:27:54 -0700</lastBuildDate><atom:link href="https://angelo512.github.io/Terabyte-CIT481-Senior-Project/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project Two</title>
+      <link>https://angelo512.github.io/Terabyte-CIT481-Senior-Project/post/project-two/</link>
+      <pubDate>Wed, 12 May 2021 20:27:54 -0700</pubDate>
+      
+      <guid>https://angelo512.github.io/Terabyte-CIT481-Senior-Project/post/project-two/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project One</title>
+      <link>https://angelo512.github.io/Terabyte-CIT481-Senior-Project/post/project-one/</link>
+      <pubDate>Wed, 12 May 2021 20:26:00 -0700</pubDate>
+      
+      <guid>https://angelo512.github.io/Terabyte-CIT481-Senior-Project/post/project-one/</guid>
+      <description>Now, automation is a key of this project.</description>
+    </item>
+    
+    <item>
+      <title>Project Zero</title>
+      <link>https://angelo512.github.io/Terabyte-CIT481-Senior-Project/post/project-zero/</link>
+      <pubDate>Wed, 12 May 2021 20:25:50 -0700</pubDate>
+      
+      <guid>https://angelo512.github.io/Terabyte-CIT481-Senior-Project/post/project-zero/</guid>
+      <description>First, we established development environment.</description>
+    </item>
+    
+    <item>
+      <title>Senior Design</title>
+      <link>https://angelo512.github.io/Terabyte-CIT481-Senior-Project/post/senior-design/</link>
+      <pubDate>Wed, 12 May 2021 20:25:38 -0700</pubDate>
+      
+      <guid>https://angelo512.github.io/Terabyte-CIT481-Senior-Project/post/senior-design/</guid>
+      <description>Senior Project As 2021 Spring semester started, our senior design group project also officially began.</description>
+    </item>
+    
+  </channel>
+</rss>
