@@ -10,7 +10,7 @@ response = client.deregister_targets(
 )
 
 import time
-time.sleep(210)
+time.sleep(120)
 
 import boto3
 client = boto3.client('ec2')
