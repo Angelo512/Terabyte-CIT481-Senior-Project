@@ -5,4 +5,6 @@ regions:
   - # Use Region of Resources
 keyed_groups:
   - key: tags
-    prefix: tags 
+    prefix: tags   
+compose: 
+  ansible_host: private_ip_address
