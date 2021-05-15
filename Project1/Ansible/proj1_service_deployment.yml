@@ -19,6 +19,18 @@
     - name: Switching out the default index.html with our groups personalized index.html
       command: mv /var/www/html/TerabyteCIT481/Project1/Ansible/index.html /var/www/html/index.html
 
+    # Replacing the default index.html file with our personalized one
+    - name: Switching out the default index.html with our groups personalized index.html
+      command: mv /var/www/html/TerabyteCIT481/Project1/Ansible/event.css /var/www/html/event.css
+
+    # Replacing the default index.html file with our personalized one
+    - name: Switching out the default index.html with our groups personalized index.html
+      command: mv /var/www/html/TerabyteCIT481/Project1/Ansible/event.js /var/www/html/event.js
+
+    # Replacing the default index.html file with our personalized one
+    - name: Switching out the default index.html with our groups personalized index.html
+      command: mv /var/www/html/TerabyteCIT481/Project1/Ansible/eventCalendar.js /var/www/html/eventCalendar.js
+
 
 
     ## ADDING MORE FILES TO /VAR/WWW/HTML
