@@ -2,12 +2,10 @@
 
 Inside this folder: 
 - `aws_ec2.yml`
-- `index.html`
-- `SimpleCalendar.html`
-- `SimpleCalendar.css`
 - `proj1_main.yml`
 - `proj1_service_deployment.yml`
 - `proj1_web_server_setup.yml`
+- `Rest: Blog Files`
 
 **aws_ec2.yml**: This .yml file is dynamic hosts file that will list certain ec2 instances depending on the filters we define
 
