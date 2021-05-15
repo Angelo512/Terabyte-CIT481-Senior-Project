@@ -152,3 +152,13 @@ Click load
 Next add a name of your choice and save or launch it 
 
 Now you will be able to see your new dashboard!
+
+---
+
+## **_Resources_**
+
+[Getting Started with Prometheus and Grafana](https://medium.com/devops-dudes/install-prometheus-on-ubuntu-18-04-a51602c6256b)
+
+[Monitoring using Prometheus and Grafana on AWS EC2](https://devops4solutions.com/monitoring-using-prometheus-and-grafana-on-aws-ec2/)
+
+---
