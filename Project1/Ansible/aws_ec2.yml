@@ -6,6 +6,5 @@ regions:
 keyed_groups:
   - key: tags
     prefix: tags 
-
 compose: 
   ansible_host: private_ip_address
