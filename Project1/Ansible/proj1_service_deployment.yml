@@ -12,7 +12,7 @@
     - name: Git Clone Terabyte Repo 
       git: 
         repo: https://github.com/Angelo512/Terabyte-CIT481-Senior-Project.git
-        dest: /var/www/html/TerabyteCIT481
+        dest: /TerabyteCIT481
         force: yes
 
     # Replacing the default index.html file with our personalized one
